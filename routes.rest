@@ -1,1 +1,19 @@
-GET http://localhost:8080/contacts?id=621fe1f527d68ebb24438395
+// LOCALHOST 
+### 
+GET http://localhost:8080/contacts 
+### 
+GET http://localhost:8080/contacts/621fe1f527d68ebb24438395 
+### 
+GET http://localhost:8080/contacts/623fe1f527d68ebb24438395 
+### 
+GET http://localhost:8080/contacts/621fe1f527d68ebb34438395
+
+// PRODUCTION
+### 
+GET https://cse341-lesson01.onrender.com/contacts 
+### 
+GET https://cse341-lesson01.onrender.com/contacts/621fe1f527d68ebb24438395 
+### 
+GET https://cse341-lesson01.onrender.com/contacts/623fe1f527d68ebb24438395 
+### 
+GET https://cse341-lesson01.onrender.com/contacts/621fe1f527d68ebb34438395

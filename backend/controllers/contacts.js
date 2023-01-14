@@ -1,24 +1,24 @@
 const mongodb = require('../db/connect');
+const ObjectId = require('mongodb').ObjectId;
 
-const getData = async (req, res, next) => {
-  let urlParameters = req.query;
+const getAllContacts = async (req, res, next) => {
+  console.log('No parameters, sending the full list...')
   const result = await mongodb.getDb().db().collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-
-    if(Object.keys(urlParameters).length === 0) {
-      console.log('No parameters, sending the full list...')
-      res.status(200).json(lists);
-    } else {
-      console.log('There are parameters present, checking id and sending corresponding contact')
-      let contactId = urlParameters.id;
-      let matchedContact = lists.filter(contact => {
-        return contact._id.toString() === contactId; 
-      })
-      res.status(200).json(matchedContact);
-    }
-
+    res.status(200).json(lists);
 });
 };
 
-module.exports = { getData };
+const getSingleContact = async (req, res, next) => {
+  console.log('Parameter found, checking id and sending contact...')
+  let contactId = new ObjectId(req.params.id);
+  const result = await mongodb.getDb().db().collection('contacts').find({ _id: contactId });
+  result.toArray().then((lists) => {
+    console.log(lists)
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  });
+};
+
+module.exports = { getAllContacts, getSingleContact };
