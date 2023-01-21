@@ -39,23 +39,23 @@ GET https://cse341-lesson01.onrender.com/contacts/63c94de3f9e8dcaee4671690
 ### 
 GET https://cse341-lesson01.onrender.com/contacts/63c94dedf9e8dcaee4671691
 ###
-POST https://cse341-lesson01.onrender.comcontacts/
+POST https://cse341-lesson01.onrender.com/contacts/
 Content-Type: application/json
 
 {
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "johndoe@gmail.com",
-  "favoriteColor": "Yellow",
-  "birthday": "May 30"
+  "firstName": "Maria",
+  "lastName": "Godoy",
+  "email": "mariagodoy@gmail.com",
+  "favoriteColor": "Pink",
+  "birthday": "10/10/2010"
 }
 ###
-PUT https://cse341-lesson01.onrender.comcontacts/63c94dc1f9e8dcaee467168f
+PUT https://cse341-lesson01.onrender.com/contacts/63c94dc1f9e8dcaee467168f
 Content-Type: application/json
 
 {
-  "firstName": "Lionel A."
+  "firstName": "Diego Armando"
 }
 ###
-DELETE https://cse341-lesson01.onrender.comcontacts/63cab3cfb1da36a342df2d33
+DELETE https://cse341-lesson01.onrender.com/contacts/63cab3cfb1da36a342df2d33
 
