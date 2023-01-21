@@ -2,18 +2,60 @@
 ### 
 GET http://localhost:8080/contacts 
 ### 
-GET http://localhost:8080/contacts/621fe1f527d68ebb24438395 
+GET http://localhost:8080/contacts/63c94dc1f9e8dcaee467168f
 ### 
-GET http://localhost:8080/contacts/623fe1f527d68ebb24438395 
+GET http://localhost:8080/contacts/63c94de3f9e8dcaee4671690 
 ### 
-GET http://localhost:8080/contacts/621fe1f527d68ebb34438395
+GET http://localhost:8080/contacts/63c94dedf9e8dcaee4671691
+###
+POST http://localhost:8080/contacts/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "johndoe@gmail.com",
+  "favoriteColor": "Yellow",
+  "birthday": "May 30"
+}
+###
+PUT http://localhost:8080/contacts/63c94dc1f9e8dcaee467168f
+Content-Type: application/json
+
+{
+  "firstName": "Lionel A."
+}
+###
+DELETE http://localhost:8080/contacts/63cab3cfb1da36a342df2d33
+
 
 // PRODUCTION
 ### 
 GET https://cse341-lesson01.onrender.com/contacts 
 ### 
-GET https://cse341-lesson01.onrender.com/contacts/621fe1f527d68ebb24438395 
+GET https://cse341-lesson01.onrender.com/contacts/63c94dc1f9e8dcaee467168f 
 ### 
-GET https://cse341-lesson01.onrender.com/contacts/623fe1f527d68ebb24438395 
+GET https://cse341-lesson01.onrender.com/contacts/63c94de3f9e8dcaee4671690 
 ### 
-GET https://cse341-lesson01.onrender.com/contacts/621fe1f527d68ebb34438395
+GET https://cse341-lesson01.onrender.com/contacts/63c94dedf9e8dcaee4671691
+###
+POST https://cse341-lesson01.onrender.comcontacts/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "johndoe@gmail.com",
+  "favoriteColor": "Yellow",
+  "birthday": "May 30"
+}
+###
+PUT https://cse341-lesson01.onrender.comcontacts/63c94dc1f9e8dcaee467168f
+Content-Type: application/json
+
+{
+  "firstName": "Lionel A."
+}
+###
+DELETE https://cse341-lesson01.onrender.comcontacts/63cab3cfb1da36a342df2d33
+
