@@ -48,13 +48,15 @@ const updateContact = async (req, res, next) => {
   console.log('Updating contact...');
 
   const contactId = new ObjectId(req.params.id);
-  const newContactInfo = {
+  let newContactInfo = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
+  // Eliminate any null/underfined attributes
+  newContactInfo = Object.fromEntries(Object.entries(newContactInfo).filter(([_, v]) => v != null));
 
   const updateResult = await mongodb
     .getDb()
