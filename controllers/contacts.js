@@ -17,7 +17,6 @@ const getSingleContact = async (req, res, next) => {
   const contactId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('contacts').find({ _id: contactId });
   result.toArray().then((lists) => {
-    console.log(lists);
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
   });
